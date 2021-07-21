@@ -1,0 +1,11 @@
+<br><br>
+<p>Descrição: {{ tarefa.desc }}</p>
+<!--<p>responsável: {{ tarefa.responsavel.nome }}</p>-->
+<p>responsável: {{ tarefa.responsavel != null ? tarefa.responsavel.nome : '' }}</p>
+
+<!--
+  operador Elvis ? colocado logo após variavel que pode assumir nulo
+  se naõ for nulo, segue a propriedade no caso .nome
+  se for nulo, não exibe nada!
+-->
+<p>responsável: {{ tarefa.responsavel?.nome }}</p>

@@ -1,0 +1,21 @@
+<h5>diretiva ngclass</h5>
+
+<h6>Usando o property-binding de class (class-binding)</h6>
+<h1>
+  <i class="bi"
+[class.bi-star]="!meuFavorito"
+[class.bi-star-fill]="meuFavorito"
+(click)="onClick()"
+></i>
+</h1>
+
+<h6>Usando a diretiva ngClass</h6>
+<h1>
+  <i class="bi"
+[ngClass]="{
+'bi-star': !meuFavorito,
+'bi-star-fill':meuFavorito
+}"
+(click)="onClick()"
+></i>
+</h1>

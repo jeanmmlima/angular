@@ -1,0 +1,40 @@
+<section class="two-day-binding">
+  <article>
+    <h3>Two-way data-binding</h3>
+    <div>
+
+      <!--
+        Propriedade value do input recebe nome que é
+        uma variável declarada no comonent
+
+        Como passar valor do template (no caso nome)
+        para o componete? Event binding
+
+        campo input tem evento input sempre que o campo
+        é atualizado!
+      -->
+      <input type="text"
+        [value]="nome"
+        (input)="nome = $event.target.value"
+      />
+      <br><br>
+
+      <input type="text"
+        [ngModel]="nome"
+        (ngModelChange)="nome = $event"
+      />
+      <br><br>
+
+      <input type="text" [(ngModel)]="nome">
+
+
+      <p>Você digitou o nome: {{nome}}</p>
+    </div>
+
+    <div>
+        <p>Meu nom é {{pessoa.nome}} e tenho {{pessoa.idade}} anos de idade</p>
+        <input type="text" [(ngModel)]="pessoa.nome">
+        <input type="text" [(ngModel)]="pessoa.idade">
+    </div>
+  </article>
+</section>

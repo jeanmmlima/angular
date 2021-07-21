@@ -1,0 +1,54 @@
+<br>
+<h5>*ngIf</h5>
+<!--
+  mostrar cursos apenas se cursos existir
+  *ngIf toda árove dentro do elemento, quando ele é verdadeiro,
+  é mostrado!
+  *ngIf quando é falso, a árvore é excluida / comentada;
+  Uma alternativa é o hidden
+-->
+<div *ngIf="cursos.length > 0">
+  Lista de cursos aqui:
+</div>
+<div *ngIf="cursos.length == 0">
+   Não existem cursos para serem listados :(
+</div>
+
+<div *ngIf="mostrarCursos">
+  Lista de cursos aqui.
+</div>
+<div *ngIf="!mostrarCursos">
+  Não existem cursos para serem listados :(
+</div>
+
+<br>
+
+<button (click)="onMostrarCursos()">Mostrar ou esconder cursos</button>
+
+<br><br>
+
+<h5>Hidenn como alternativa</h5>
+
+<div [hidden]="!mostrarCursos">
+  Lista de cursos aqui.
+</div>
+<div [hidden]="mostrarCursos">
+  Não existem cursos para serem listados :(
+</div>
+
+<h5>Removendo o * e usando template</h5>
+
+<div *ngIf="mostrarCursos">
+
+</div>
+<!--
+  Cria template e usa o property binding do ngIf
+
+<template [ngIf]="mostrarCursos">
+  <div>Lista de Cursos Aqui.</div>
+</template>
+
+<div template="ngIf mostrarCursos">
+  <div>Lista de Cursos Aqui.</div>
+</div>
+-->

@@ -1,0 +1,230 @@
+<section class="property-binding">
+
+  <article>
+    <h3>Interpolation / Interpolação</h3>
+    <!--mesmo nome declarado no componente!-->
+    <p>String renderizada com interpolação: {{ url }}</p>
+    <!--Angular pode reslver expressões dentro da interpolação-->
+    <p>Resultado de 1+1 é: {{1+1}}</p>
+    <p>Resultado de 1 + 1 não é: {{1 + 1 + getValor()}}</p>
+    <!-- também lida com expressões lógicas-->
+    <p>Curso angular e gosto curso: {{ cursoAngular && getCurtirCurso()}}</p>
+  </article>
+  <article>
+    <h3>Property Binding</h3>
+    <p>Utilizando Interpolação</p>
+    <img src="{{ urlImagem }}">
+    <p>Property binding</p>
+    <!-- Colocando o colchetes [ ] no campo, no caso src
+    o binding identifica como propriedade. Assim,
+    não é preciso utilizar as interpolação.
+    Basta passar o nome da variável ou chamar um método.-->
+    <img [src]="urlImagem"> <!--equivalentes-->
+    <img bind-src="urlImagem">
+  </article>
+
+  <article>
+    <h3>Class e Style Binding</h3>
+    <div>
+      Selecione uma classe:
+      <!--declarando variavel #classe para pegar a classe
+      e vai pegar quando tiver um evento de change!!-->
+
+      <select #classe (change)="0">
+        <option value="alert-success">Sucesso</option>
+        <option value="alert-info">Info</option>
+        <option value="alert-warning">Alerta</option>
+        <option value="alert-danger">Erro</option>
+      </select>
+      <br><br>
+
+      <!--
+        interpolação também pode ser usado
+      -->
+      <div class="alert {{ classe.value }}">
+        Texto colorido conforme valor do combobox;
+      </div>
+
+      <!--Adicionando um Class binding para que
+      fique colorido apenas o tipo de alert selecionado
+      no select. Class binding é uma forma de property
+      binding -->
+      <!--
+        colchetes são usados para implementar um class binding
+        [ ] entre colchetes eu informo class.NOME_DA_CLASSE
+        que quero modificar. Igual a ao valor de uma variável
+        declarada, no caso a variável classe declarada e informada
+        pelo select!  classe.value representa o valor do select ativo
+        que é uma string e informa o class do alert, no caso do primeiro
+        alert-sucess. Deixando a div "verde" quando selecinado sucesso.
+
+      -->
+      <div class="alert " role="alert"
+       [class.alert-success]="classe.value == 'alert-success'">
+        A simple success alert—check it out!
+      </div>
+      <div class="alert " role="alert"
+      [class.alert-info]="classe.value == 'alert-info'">
+        A simple success alert—check it out!
+      </div>
+      <div class="alert " role="alert"
+      [class.alert-warning]="classe.value == 'alert-warning'">
+        A simple warning alert—check it out!
+      </div>
+      <div class="alert " role="alert"
+      [class.alert-danger]="classe.value == 'alert-danger'">
+        A simple danger alert—check it out!
+      </div>
+
+      <!-- style binding
+      como utilizar o style para fazer property biding
+      -->
+      <div class="alert alert-danger" role="alert"
+      [style.display]="classe.value=='alert-danger' ? 'block' : 'none'">
+       Erro!
+      </div>
+    </div>
+  </article>
+</section>
+
+<section>
+  <article>
+    <h3>Event Binding</h3>
+    <div>
+      <!--
+        No angular podemos escutar qualquer evento e seja disparado
+        na página!
+        parenteses ( ) são usados ao redor do nome do evento
+        para indicar binding que queremos
+        escutar o evento! - (nome_do_evento)
+        Poderia ser tbm on-(evento) on-click
+        com sinal de igual podemos chamar um método do component
+      -->
+      <button (click)="botaoClicado()"
+      class="btn btn-primary">Me Clique!</button>
+      <br><br>
+
+      <!-- escutando eventos no input
+      keyup:assim que é digitado algo!
+      $event passa o evento para o método
+    assim é possíve capturar qual caractere foi teclado!-->
+
+    <!-- posso passar valores do campo via target.value
+    como tbm declarar uma variavel #campoInput que vai
+  guardar o valor do campo-->
+
+  <!-- evento blur chamado quando o componente é
+  "desfocado" Ex: esotu digitando e clico em outro lugar da pagina-->
+
+      <input type="text"
+      (keyup)="onKeyUp($event)"
+      (keyup.enter)="salvarValor(campoInput.value)"
+      (blur)="salvarValor($event.target.value)"
+      #campoInput />
+
+      <p>Valor Atual: {{ valorAtual }}</p>
+      <p>Valor Salvo: {{ valorSalvo }}</p>
+    <br><br>
+
+    <span
+    (mouseover)="onMouseOverOut()"
+    (mouseout)="onMouseOverOut()"
+    [class.highlight]="isMouseOver"
+    >Passe o mouse sobre mim!</span>
+
+    </div>
+  </article>
+</section>
+<br><br><br>
+
+<!--
+Mantém componente e o template atulizados ao mesmo tempo
+two-way data binding
+
+Atualiza template e componente ao mesmo tempo
+Uitlizar o binding de eventos e propriedades JUNTOS
+
+-->
+<section class="two-day-binding">
+  <article>
+    <h3>Two-way data-binding</h3>
+    <div>
+
+      <!--
+        Propriedade value do input recebe nome que é
+        uma variável declarada no comonent
+
+        Como passar valor do template (no caso nome)
+        para o componete? Event binding
+
+        campo input tem evento input sempre que o campo
+        é atualizado!
+      -->
+      <input type="text"
+        [value]="nome"
+        (input)="nome = $event.target.value"
+      />
+      <br><br>
+
+      <input type="text"
+        [ngModel]="nome"
+        (ngModelChange)="nome = $event"
+      />
+      <br><br>
+
+      <input type="text" [(ngModel)]="nome">
+
+
+      <p>Você digitou o nome: {{nome}}</p>
+    </div>
+
+    <div>
+        <p>Meu nom é {{pessoa.nome}} e tenho {{pessoa.idade}} anos de idade</p>
+        <input type="text" [(ngModel)]="pessoa.nome">
+        <input type="text" [(ngModel)]="pessoa.idade">
+    </div>
+  </article>
+</section>
+<br><br><br>
+
+<!--
+  Se o código declarado no template de outro componente
+  usa o ndModel, é preciso exportar no módulo de tal compoente
+  e depois importar o módulo no app.moddule
+
+
+  No componente meu-form, no module.ts tbm é preciso importar
+  o FormsModule
+-->
+<app-meu-form></app-meu-form>
+
+<!--
+  Passando variável  do componente como properties
+   para outro template!!
+   Util para organização!
+
+-->
+
+<!--
+
+  Fazer o componente pai (data-binding)
+  escutar o evento de que o valor do contador
+  mudou! Export o valor de mudança do componente
+  output-property para o componente pai data-binding
+
+  recebe evento de output-property
+
+
+-->
+
+<section class="input-output-properties">
+  <article>
+    <h3>Input/Output Properties </h3>
+    <app-curso [nome]="nomeDoCurso"></app-curso>
+    <br>
+    <contador [valor]="valorInicial"
+    (mudouValor)="onMudouValor($event)"
+    ></contador>
+
+  </article>
+</section>

@@ -1,0 +1,19 @@
+<p>
+<!--
+  {{nome_variavel}}
+  traz variavel declarada na classe do componet.
+-->
+Lista de cursos do portal {{nomePortal}}
+</p>
+<app-curso-detalhe></app-curso-detalhe>
+
+
+<!--
+  Quando a variável é um vetor
+  pode-se usar a DIRETIVA ngFor
+-->
+<ul>
+  <li *ngFor="let curso of cursos">
+    {{ curso }}
+  </li>
+</ul>
