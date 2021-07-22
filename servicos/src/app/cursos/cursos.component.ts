@@ -5,7 +5,8 @@ import { CursosService } from './cursos.service';
 @Component({
   selector: 'app-cursos',
   templateUrl: './cursos.component.html',
-  styleUrls: ['./cursos.component.scss']
+  styleUrls: ['./cursos.component.scss'],
+  providers: [CursosService]
 })
 export class CursosComponent implements OnInit {
 
@@ -30,7 +31,6 @@ export class CursosComponent implements OnInit {
   de serviços.
   */
   cursos: string[] = [];
-  //comentada caso use o private no construtor
   cursosService: CursosService;
 
   //COM INJEÇÃO DE DEPENDENCIA
@@ -43,6 +43,12 @@ export class CursosComponent implements OnInit {
   */
   ngOnInit(): void {
     this.cursos = this.cursosService.getCursos();
-  }
 
+    //inicializa inscrição em evento!
+    //sempre que  evento muda ou emitido, ele é notificado.
+
+    CursosService.criouNovoCurso.subscribe(
+    (curso: any) => this.cursos.push(curso)
+    );
+  }
 }
