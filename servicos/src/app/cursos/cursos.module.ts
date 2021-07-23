@@ -15,6 +15,6 @@ import { CursosComponent } from './cursos.component';
   //declarando serviço em providers, ficando disponivel
   //para toda a aplicação
   exports:[CursosComponent],
-  providers: [CursosService],
+  //providers: [CursosService],
 })
 export class CursosModule { }
