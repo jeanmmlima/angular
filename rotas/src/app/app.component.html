@@ -1,4 +1,25 @@
 <!--
   componentes de rotas utilizado por esse elemento!
 -->
-<router-outlet></router-outlet>
+
+<!--
+  Inserindo diretiva (RouterLink) para acessar as rotas
+-->
+
+<nav>
+  <div class="nav-wrapper">
+    <a routerLink="" class="brand-logo right">Rotas NG2</a>
+    <ul id="nav-mobile" class="left hide-on-med-and-down">
+      <li routerLinkActive="active"><a routerLink="/login">Login</a></li>
+      <li routerLinkActive="active"><a routerLink="/cursos">Cursos</a></li>
+      <li routerLinkActive="active"><a [routerLink]="['curso',idCurso.value]">Curso com Detalhe</a></li>
+    </ul>
+  </div>
+</nav>
+<div class="container">
+  <p>Entre com o id do curso</p>
+  <input #idCurso (input)="0">
+  <router-outlet></router-outlet>
+</div>
+
+
