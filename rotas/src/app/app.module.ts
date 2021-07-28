@@ -1,5 +1,5 @@
 import { AppRoutingModule } from './app.routing.module';
-import { CursosService } from './cursos/cursos.service';
+//import { CursosService } from './cursos/cursos.service';
 //import { routing } from './app.routing';
 
 
@@ -11,26 +11,30 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
-import { CursosComponent } from './cursos/cursos.component';
-import { CursoDetalheComponent } from './curso-detalhe/curso-detalhe.component';
-import { CursoNaoEncontradoComponent } from './curso-nao-encontrado/curso-nao-encontrado.component';
+//import { CursosComponent } from './cursos/cursos.component';
+//import { CursoDetalheComponent } from './cursos/curso-detalhe/curso-detalhe.component';
+//import { CursoNaoEncontradoComponent } from './cursos/curso-nao-encontrado/curso-nao-encontrado.component';
+import { CursosModule } from './cursos/cursos.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    LoginComponent,
+    LoginComponent,/*
     CursosComponent,
     CursoDetalheComponent,
-    CursoNaoEncontradoComponent
+    CursoNaoEncontradoComponent*/
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    CursosModule,
+
     AppRoutingModule
+    //routing
 
   ],
-  providers: [CursosService],
+  //providers: [CursosService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
