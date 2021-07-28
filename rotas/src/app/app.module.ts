@@ -1,5 +1,8 @@
+import { AppRoutingModule } from './app.routing.module';
 import { CursosService } from './cursos/cursos.service';
-import { routing } from './app.routing';
+//import { routing } from './app.routing';
+
+
 
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
@@ -24,7 +27,7 @@ import { CursoNaoEncontradoComponent } from './curso-nao-encontrado/curso-nao-en
   imports: [
     BrowserModule,
     FormsModule,
-    routing
+    AppRoutingModule
 
   ],
   providers: [CursosService],
