@@ -37,7 +37,7 @@ export class AlunoDetalheComponent implements OnInit {
 
   //rotas imperativas
   editarContato(){
-    this.router.navigate(['/alunos',this.aluno.id,'editar'])
+    this.router.navigate(['/alunos',this.aluno.id,'editar']);
   }
 
 }
