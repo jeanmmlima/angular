@@ -1,3 +1,4 @@
+import { FormsModule } from '@angular/forms';
 //import { RouterModule } from '@angular/router';
 import { CursosService } from './cursos.service';
 import { CursoDetalheComponent } from './curso-detalhe/curso-detalhe.component';
@@ -18,7 +19,8 @@ import { CursosRoutingModule } from './cursos.routing.module';
   ],
   imports: [
     CommonModule,
-    CursosRoutingModule
+    CursosRoutingModule,
+    FormsModule
     /*RouterModule */],
   exports: [],
   providers: [ CursosService ],

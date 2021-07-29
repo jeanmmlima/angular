@@ -1,7 +1,9 @@
-import { Subscription } from 'rxjs';
+import { Subscription, timer } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CursosService } from './cursos.service';
 import { Component, OnInit } from '@angular/core';
+import { waitForAsync } from '@angular/core/testing';
+import { SelectMultipleControlValueAccessor } from '@angular/forms';
 
 @Component({
   selector: 'app-cursos',
@@ -39,11 +41,15 @@ export class CursosComponent implements OnInit {
   }
 
   proximaPagina(){
-    this.pagina++;
-    this.router.navigate(['/cursos'],{
-      queryParams:{'pagina':this.pagina}
-    });
+      this.pagina++;
+      this.router.navigate(['/cursos'],{
+        queryParams:{'pagina':this.pagina}
+      });
+
+
   }
+
+
 
 
 }
