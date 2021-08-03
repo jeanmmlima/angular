@@ -1,3 +1,4 @@
+import { AuthGuard } from './guards/auth.guard';
 import { AuthService } from './login/auth.service';
 import { AlunosModule } from './alunos/alunos.module';
 import { AppRoutingModule } from './app.routing.module';
@@ -37,7 +38,7 @@ import { LoginComponent } from './login/login.component';
     //routing
 
   ],
-  providers: [AuthService],
+  providers: [AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
