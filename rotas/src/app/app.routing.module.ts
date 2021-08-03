@@ -11,6 +11,10 @@ import { ModuleWithProviders } from '@angular/core';
 
 
 const appRoutes: Routes = [
+  //lazy load
+  //{path: 'cursos',loadChildren: 'app/cursos/cursos.module#CursosModule'},
+  //{path: 'alunos', loadChildren: 'app/alunos/alnos.module#AlunosModule'},
+
   { path: 'login', component: LoginComponent},
   { path: '', component: HomeComponent }
   //{ path: 'cursos', component: CursosComponent},

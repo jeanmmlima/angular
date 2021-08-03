@@ -9,6 +9,7 @@ import { CursoDetalheComponent } from './curso-detalhe/curso-detalhe.component';
 
 
 const cursosRoutes: Routes = [
+  //{ path: 'cursos', component: CursosComponent}, para lazy loading
   { path: 'cursos', component: CursosComponent},
   { path: 'curso/:id', component: CursoDetalheComponent},
   { path: 'naoEncontrado', component: CursoNaoEncontradoComponent}
