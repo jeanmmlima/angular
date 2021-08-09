@@ -10,9 +10,14 @@ import { CursoDetalheComponent } from './curso-detalhe/curso-detalhe.component';
 
 const cursosRoutes: Routes = [
   //{ path: 'cursos', component: CursosComponent}, para lazy loading
-  { path: 'cursos', component: CursosComponent},
-  { path: 'curso/:id', component: CursoDetalheComponent},
-  { path: 'naoEncontrado', component: CursoNaoEncontradoComponent}
+  //{ path: 'cursos', component: CursosComponent},
+  //{ path: 'curso/:id', component: CursoDetalheComponent},
+  //{ path: 'naoEncontrado', component: CursoNaoEncontradoComponent}
+  //para lazy loading
+  { path: '', component: CursosComponent},
+  { path: 'naoEncontrado', component: CursoNaoEncontradoComponent},
+  { path: ':id', component: CursoDetalheComponent},
+
 ];
 
 @NgModule({

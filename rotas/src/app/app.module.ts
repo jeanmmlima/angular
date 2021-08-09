@@ -1,6 +1,7 @@
+import { CursosGuard } from './guards/cursos.guard';
 import { AuthGuard } from './guards/auth.guard';
 import { AuthService } from './login/auth.service';
-import { AlunosModule } from './alunos/alunos.module';
+//import { AlunosModule } from './alunos/alunos.module';
 import { AppRoutingModule } from './app.routing.module';
 //import { CursosService } from './cursos/cursos.service';
 //import { routing } from './app.routing';
@@ -17,7 +18,7 @@ import { LoginComponent } from './login/login.component';
 //import { CursosComponent } from './cursos/cursos.component';
 //import { CursoDetalheComponent } from './cursos/curso-detalhe/curso-detalhe.component';
 //import { CursoNaoEncontradoComponent } from './cursos/curso-nao-encontrado/curso-nao-encontrado.component';
- import { CursosModule } from './cursos/cursos.module';
+// import { CursosModule } from './cursos/cursos.module';
 //import { AlunosComponent } from './alunos/alunos.component';
 
 @NgModule({
@@ -32,13 +33,13 @@ import { LoginComponent } from './login/login.component';
   imports: [
     BrowserModule,
     FormsModule,
-    CursosModule,
-    AlunosModule,
+    //CursosModule,
+    //AlunosModule,
     AppRoutingModule,
     //routing
 
   ],
-  providers: [AuthService, AuthGuard],
+  providers: [AuthService, AuthGuard,CursosGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

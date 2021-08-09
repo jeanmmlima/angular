@@ -1,3 +1,4 @@
+import { CursosGuard } from './guards/cursos.guard';
 import { AuthGuard } from './guards/auth.guard';
 import { NgModule } from "@angular/core";
 
@@ -13,8 +14,13 @@ import { ModuleWithProviders } from '@angular/core';
 
 const appRoutes: Routes = [
   //lazy load
-  //{path: 'cursos',loadChildren: 'app/cursos/cursos.module#CursosModule'},
-  //{path: 'alunos', loadChildren: 'app/alunos/alnos.module#AlunosModule'},
+  {path: 'cursos',
+  loadChildren: () => import('./cursos/cursos.module').then(m => m.CursosModule)
+  //canActivate: [AuthGuard],
+  //canActivateChild:[CursosGuard]
+  },
+  {path: 'alunos',
+  loadChildren: () => import('./alunos/alunos.module').then(m => m.AlunosModule)},
 
   { path: 'login', component: LoginComponent},
   { path: '', component: HomeComponent,

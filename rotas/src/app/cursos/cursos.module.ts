@@ -25,4 +25,4 @@ import { CursosRoutingModule } from './cursos.routing.module';
   exports: [],
   providers: [ CursosService ],
 })
-export class CursosModule {}
+export class CursosModule { }
