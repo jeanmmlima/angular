@@ -15,12 +15,14 @@ import { ModuleWithProviders } from '@angular/core';
 const appRoutes: Routes = [
   //lazy load
   {path: 'cursos',
-  loadChildren: () => import('./cursos/cursos.module').then(m => m.CursosModule)
-  //canActivate: [AuthGuard],
+  loadChildren: () => import('./cursos/cursos.module').then(m => m.CursosModule),
+  canActivate: [AuthGuard]
   //canActivateChild:[CursosGuard]
   },
   {path: 'alunos',
-  loadChildren: () => import('./alunos/alunos.module').then(m => m.AlunosModule)},
+  loadChildren: () => import('./alunos/alunos.module').then(m => m.AlunosModule),
+  canActivate: [AuthGuard]
+  },
 
   { path: 'login', component: LoginComponent},
   { path: '', component: HomeComponent,
