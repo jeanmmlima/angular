@@ -1,3 +1,4 @@
+import { AlunosGuard } from './guards/alunos.guard';
 import { CursosGuard } from './guards/cursos.guard';
 import { AuthGuard } from './guards/auth.guard';
 import { NgModule } from "@angular/core";
@@ -14,14 +15,21 @@ import { ModuleWithProviders } from '@angular/core';
 
 const appRoutes: Routes = [
   //lazy load
+
+  //auth guard verifica a rota base cursos
+  //cursos guard verifica as rotas filhas de curso
   {path: 'cursos',
   loadChildren: () => import('./cursos/cursos.module').then(m => m.CursosModule),
-  canActivate: [AuthGuard]
+  canActivate: [AuthGuard],
+  canActivateChild: [CursosGuard]
   //canActivateChild:[CursosGuard]
   },
+
+  //canActivateChild tbm pode ficar routing do modulo
   {path: 'alunos',
   loadChildren: () => import('./alunos/alunos.module').then(m => m.AlunosModule),
   canActivate: [AuthGuard]
+ //canActivateChild: [AlunosGuard]
   },
 
   { path: 'login', component: LoginComponent},
