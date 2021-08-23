@@ -23,7 +23,7 @@ const alunosRoutes = [
   children: [
     {path: 'novo', component: AlunoFormComponent},
     {path: ':id', component: AlunoDetalheComponent,
-      resolve: { aluno: AlunoDetalheResolver }
+      resolve: { aluno: AlunoDetalheResolver } //resolve a rota ANTES de carregar o componente
   },
     {path: ':id/editar', component: AlunoFormComponent,
       canDeactivate:[AlunosDeactivateGuard]}

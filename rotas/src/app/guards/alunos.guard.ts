@@ -22,6 +22,8 @@ export class AlunosGuard implements CanActivateChild {
     como ir até o servidor e verificar o usuario
     logado tem acesso
     */
+
+    console.log('AlunosGuard: Guarda de rota filha!');
     if(state.url.includes('editar')){
       //alert('Usuário sem acesso!')
       //return of(false);
