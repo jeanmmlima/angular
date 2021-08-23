@@ -21,14 +21,16 @@ const appRoutes: Routes = [
   {path: 'cursos',
   loadChildren: () => import('./cursos/cursos.module').then(m => m.CursosModule),
   canActivate: [AuthGuard],
-  canActivateChild: [CursosGuard]
+  canActivateChild: [CursosGuard],
+  canLoad: [AuthGuard]
   //canActivateChild:[CursosGuard]
   },
 
   //canActivateChild tbm pode ficar routing do modulo
   {path: 'alunos',
   loadChildren: () => import('./alunos/alunos.module').then(m => m.AlunosModule),
-  canActivate: [AuthGuard]
+  canActivate: [AuthGuard],
+  canLoad: [AuthGuard]
  //canActivateChild: [AlunosGuard]
   },
 
