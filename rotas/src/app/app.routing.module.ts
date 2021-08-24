@@ -50,7 +50,8 @@ const appRoutes: Routes = [
 
 @NgModule({
   imports:[
-    RouterModule.forRoot(appRoutes)
+    //no segundo parametros de forRoot posso pedir pra usar hash - necessário para requisições no back
+    RouterModule.forRoot(appRoutes, {useHash: true})
   ],
   exports:[
     RouterModule
