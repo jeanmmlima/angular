@@ -1,3 +1,4 @@
+import { PaginaNaoEncontradaComponent } from './pagina-nao-encontrada/pagina-nao-encontrada.component';
 import { AlunosGuard } from './guards/alunos.guard';
 import { CursosGuard } from './guards/cursos.guard';
 import { AuthGuard } from './guards/auth.guard';
@@ -35,8 +36,13 @@ const appRoutes: Routes = [
   },
 
   { path: 'login', component: LoginComponent},
-  { path: '', component: HomeComponent,
-  canActivate:[AuthGuard] }
+  { path: 'home', component: HomeComponent,
+  canActivate:[AuthGuard] },
+
+  { path: '', redirectTo: '/home', pathMatch: 'full'},
+  //qualquer rota que não exite cai nesse caminho
+  //com o AuthGuard redireciona para o LOGIN
+  {path: '**', component: PaginaNaoEncontradaComponent }//, canActivate: [AuthGuard]}
   //{ path: 'cursos', component: CursosComponent},
   //{ path: 'curso/:id', component: CursoDetalheComponent},
   //{ path: 'naoEncontrado', component: CursoNaoEncontradoComponent}
