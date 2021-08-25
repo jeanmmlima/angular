@@ -1,14 +1,29 @@
-<form>
+<!--
+
+  variável local para fazer referencia ao formulário!
+  todo trabalho é no código HTML o template do componente
+
+  #f -  é a variável local
+
+  - #f tbm precisa ficar assocaida a alguma diretiva do angular
+  no caso o ngForm. Solicita auxílio do angular
+  para gerenciar o form referenciado pelo #f.
+
+  ngModel nos inputs captura o valor do campo atraves da variavel name
+  form.value."texto no campo name"
+-->
+
+<form #f="ngForm" (ngSubmit)="onSubmit(f)" >
   <div class="form-group">
     <label for="nome" class="form-label">Nome</label>
-    <input type="text" class="form-control"
-    id="nome" placeholder="Nome">
+    <input type="text" class="form-control" name="nome"
+    id="nome" placeholder="Nome" ngModel>
   </div>
 
   <div class="form-group">
     <label for="email" class="form-label">Email</label>
-    <input type="email" class="form-control"
-    id="email" placeholder="nome@email.com">
+    <input type="email" class="form-control" name="email"
+    id="email" placeholder="nome@email.com" ngModel>
   </div>
   <br>
   <button type="submit" class="btn btn-primary">Submit</button>
