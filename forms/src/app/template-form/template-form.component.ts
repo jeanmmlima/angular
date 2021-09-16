@@ -35,4 +35,8 @@ export class TemplateFormComponent implements OnInit {
 
   }
 
+  consultaCEP(cep: any){
+    console.log(cep);
+  }
+
 }
