@@ -102,8 +102,9 @@
           <label for="cep" class="control-label">CEP</label>
           <input type="text" class="form-control" id="cep"
           name="cep" ngModel required #cep="ngModel"
-          (blur)="consultaCEP($any($event.target).value)"
+          (blur)="consultaCEP($any($event.target).value, f)"
           >
+          <!-- f referencia aoformulario-->
           <div *ngIf="!cep.valid && cep.touched"
             class="alert alert-danger" role="alert">
             CEP é obrigatório
