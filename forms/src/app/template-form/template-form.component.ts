@@ -54,6 +54,8 @@ export class TemplateFormComponent implements OnInit {
       //Valida o formato do CEP.
       if(validacep.test(cep)) {
 
+        this.resetaDadosForm(form);
+
         //chamada get via HTTP - precisa utilizar o Http
         //para isso precisa INJETAR o Http
         let headers = new HttpHeaders({
@@ -100,6 +102,20 @@ export class TemplateFormComponent implements OnInit {
     });
 
 
+  }
+
+  resetaDadosForm(formulario: any){
+    formulario.form.patchValue({
+      endereco: {
+        rua: null,
+        cep: null,
+        //numero: '',
+        complemento: null,
+        bairro: null,
+        cidade: null,
+        estado: null
+      }
+    });
   }
 
 }
