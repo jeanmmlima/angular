@@ -4,12 +4,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { SideInfoComponent } from './side-info/side-info.component';
+import { MainInfoComponent } from './main-info/main-info.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavMenuComponent,
-    SideInfoComponent
+    SideInfoComponent,
+    MainInfoComponent
   ],
   imports: [
     BrowserModule
