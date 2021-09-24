@@ -2,3 +2,9 @@
 main {
   flex: 1 0 auto;
 }
+
+main{
+  .container{
+    max-width: 60%;
+  }
+}
