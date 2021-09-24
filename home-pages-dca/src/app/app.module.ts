@@ -5,13 +5,15 @@ import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { SideInfoComponent } from './side-info/side-info.component';
 import { MainInfoComponent } from './main-info/main-info.component';
+import { FooterInfoComponent } from './footer-info/footer-info.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavMenuComponent,
     SideInfoComponent,
-    MainInfoComponent
+    MainInfoComponent,
+    FooterInfoComponent
   ],
   imports: [
     BrowserModule
