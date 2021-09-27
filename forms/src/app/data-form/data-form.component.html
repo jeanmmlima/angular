@@ -1,1 +1,41 @@
-<p>data-form works!</p>
+
+
+<!--
+  Diretiva formGroup para sncronizar fomrulario html com o data form cnstruido no componente
+
+-->
+<form class="form-horizontal" [formGroup]="formulario">
+  <div class="form-group">
+
+    <div class="col-sm-12">
+      <label for="nome" class="form-label">Nome</label>
+    </div>
+
+
+    <div class="col-sm-12">
+
+      <input type="text" class="form-control" name="nome"
+      id="nome" placeholder="Nome">
+    </div>
+
+
+  </div>
+
+  <div class="form-group">
+    <div class="col-sm-12">
+      <label for="email" class="form-label">Email</label>
+    </div>
+
+    <div class="col-sm-12">
+
+        <input type="email" class="form-control" name="email"
+        id="email" placeholder="nome@email.com"
+        >
+    </div>
+  </div>
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+
+
+</form>
+
