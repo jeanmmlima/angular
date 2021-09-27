@@ -1,3 +1,4 @@
+import { AppRoutingModule } from './app.routing.module';
 import { HomeModule } from './home/home.module';
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
@@ -11,6 +12,7 @@ import { FooterInfoComponent } from './footer-info/footer-info.component';
 import { EnsinoComponent } from './ensino/ensino.component';
 import { PesquisaComponent } from './pesquisa/pesquisa.component';
 import { ExtensaoComponent } from './extensao/extensao.component';
+import { PaginaNaoEncontradaComponent } from './pagina-nao-encontrada/pagina-nao-encontrada.component';
 
 @NgModule({
   declarations: [
@@ -20,12 +22,14 @@ import { ExtensaoComponent } from './extensao/extensao.component';
     FooterInfoComponent,
     EnsinoComponent,
     PesquisaComponent,
-    ExtensaoComponent
+    ExtensaoComponent,
+    PaginaNaoEncontradaComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HomeModule
+    HomeModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
