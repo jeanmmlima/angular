@@ -8,13 +8,19 @@ import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { SideInfoComponent } from './side-info/side-info.component';
 
 import { FooterInfoComponent } from './footer-info/footer-info.component';
+import { EnsinoComponent } from './ensino/ensino.component';
+import { PesquisaComponent } from './pesquisa/pesquisa.component';
+import { ExtensaoComponent } from './extensao/extensao.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavMenuComponent,
     SideInfoComponent,
-    FooterInfoComponent
+    FooterInfoComponent,
+    EnsinoComponent,
+    PesquisaComponent,
+    ExtensaoComponent
   ],
   imports: [
     BrowserModule,
