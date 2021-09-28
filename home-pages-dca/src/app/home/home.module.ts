@@ -1,4 +1,4 @@
-import { AlunoDetalheResolver } from './../../../../rotas/src/app/alunos/guards/aluno-detalhe.resolver';
+import { UsuarioDetalheResolver } from './guards/usuario-detalhe.resolver';
 import { HomeRoutingModule } from './home.routing.module';
 import { UsuarioFormComponent } from './usuario-form/usuario-form.component';
 import { HomeService } from './home.service';
@@ -24,8 +24,8 @@ import { UsuarioDetalheComponent } from './usuario-detalhe/usuario-detalhe.compo
     HomeRoutingModule
   ],
   exports:[
-    HomeComponent
+    //HomeComponent
   ],
-  providers:[HomeService, AlunoDetalheResolver]
+  providers:[HomeService, UsuarioDetalheResolver]
 })
 export class HomeModule { }

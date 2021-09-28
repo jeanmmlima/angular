@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainInfoComponent implements OnInit {
 
+  usuarios: any[] = [];
   usuario: any;
 
   constructor(
@@ -15,6 +16,7 @@ export class MainInfoComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.usuarios = this.usuarioSerive.getUsuarios();
     this.usuario = this.usuarioSerive.getUsuario(1);
   }
 

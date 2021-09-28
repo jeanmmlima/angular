@@ -4,9 +4,7 @@ import { Injectable } from '@angular/core';
 import { Resolve, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 import { Observable } from 'rxjs';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class UsuarioDetalheResolver implements Resolve<Usuario> {
 
   constructor(private usuarioService: HomeService){}
@@ -14,7 +12,7 @@ export class UsuarioDetalheResolver implements Resolve<Usuario> {
   resolve(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
-  ): Observable<any> | Promise<any> | any {
+  ):Observable<any>|Promise<any>|any {
 
     console.log("usuario resolver!");
 

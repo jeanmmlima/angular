@@ -1,1 +1,7 @@
-<p>usuario-detalhe works!</p>
+<h4 class="text-name">{{usuario.nome}}</h4>
+<div class="divider"></div>
+<p class="text-description">
+  {{usuario.descricao}}
+</p>
+<a  class="waves-effect waves-light btn blue"
+  (click)="editarUsuario()">Editar</a>
