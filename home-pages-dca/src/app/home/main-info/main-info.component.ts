@@ -1,3 +1,4 @@
+import { HomeService } from './../home.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainInfoComponent implements OnInit {
 
-  constructor() { }
+  usuario: any;
+
+  constructor(
+    private usuarioSerive: HomeService
+  ) { }
 
   ngOnInit(): void {
+    this.usuario = this.usuarioSerive.getUsuario(1);
   }
 
 }

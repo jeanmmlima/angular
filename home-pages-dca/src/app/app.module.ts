@@ -28,7 +28,7 @@ import { PaginaNaoEncontradaComponent } from './pagina-nao-encontrada/pagina-nao
   imports: [
     BrowserModule,
     FormsModule,
-    HomeModule,
+  //  HomeModule,
     AppRoutingModule
   ],
   providers: [],

@@ -8,8 +8,10 @@ import { PesquisaComponent } from './pesquisa/pesquisa.component';
 import { ExtensaoComponent } from './extensao/extensao.component';
 //import { PageNotFoundComponent } from './';
 
-const routes: Routes = [
-  { path: 'home', component: HomeComponent },
+const appRoutes: Routes = [
+  { path: 'home',
+  loadChildren: () => import('./home/home.module').then(m => m.HomeModule),
+  },
   { path: 'ensino', component: EnsinoComponent },
   { path: 'pesquisa', component: PesquisaComponent },
   { path: 'extensao', component: ExtensaoComponent },
@@ -25,7 +27,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(appRoutes, {useHash: true})],
   exports: [RouterModule]
 })
 export class AppRoutingModule {}
