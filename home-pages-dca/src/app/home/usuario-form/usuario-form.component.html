@@ -1,1 +1,27 @@
-<p>usuario-form works!</p>
+<h5>
+  Editar usuário
+</h5>
+
+<div class="col s12">
+  <div class="row">
+    <div class="input-field col s12">
+      <input disable [(ngModel)]="usuario.id" id="disabled" type="text">
+      <label for="disabled" class="active">#</label>
+    </div>
+  </div>
+  <!-- two eay data binding para aperecer os dados atuais
+  importar o FormsModule
+  Utiliza o NgModel-->
+  <div class="row">
+    <div class="input-field col s12">
+      <input id="nome" [(ngModel)]="usuario.nome" class="validate" (input)="onInput()">
+      <label for="nome" class="active">Nome</label>
+    </div>
+  </div>
+  <div class="row">
+    <div class="input-field col s12">
+      <input id="email" [(ngModel)]="usuario.descricao" class="validate">
+      <label for="email" class="active">Descrição</label>
+    </div>
+  </div>
+</div>

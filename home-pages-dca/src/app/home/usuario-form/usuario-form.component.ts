@@ -13,6 +13,7 @@ export class UsuarioFormComponent implements OnInit {
 
   inscricao!: Subscription;
   usuario: any;
+  formMudou: boolean = false;
 
   constructor(
     private route: ActivatedRoute,
@@ -39,6 +40,11 @@ export class UsuarioFormComponent implements OnInit {
     //Called once, before the instance is destroyed.
     //Add 'implements OnDestroy' to the class.
     this.inscricao.unsubscribe();
+  }
+
+  onInput(){
+    this.formMudou = true;
+    console.log("mudou!");
   }
 
 }
