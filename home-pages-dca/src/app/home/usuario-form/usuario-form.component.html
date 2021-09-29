@@ -1,11 +1,13 @@
-<h5>
-  Editar usuário
-</h5>
+<h4 class="text-name">{{usuario.nome}}</h4>
+<div class="divider"></div>
+<p class="text-description">
+  {{usuario.descricao}}
+</p>
 
 <div class="col s12">
   <div class="row">
     <div class="input-field col s12">
-      <input disable [(ngModel)]="usuario.id" id="disabled" type="text">
+      <input disabled [(ngModel)]="usuario.id" id="disabled" class="validate" type="text">
       <label for="disabled" class="active">#</label>
     </div>
   </div>
@@ -20,8 +22,8 @@
   </div>
   <div class="row">
     <div class="input-field col s12">
-      <input id="email" [(ngModel)]="usuario.descricao" class="validate">
-      <label for="email" class="active">Descrição</label>
+      <textarea id="descricao" [(ngModel)]="usuario.descricao" class="materialize-textarea validate"></textarea>
+      <label for="descricao" class="active">Descrição</label>
     </div>
   </div>
 </div>
