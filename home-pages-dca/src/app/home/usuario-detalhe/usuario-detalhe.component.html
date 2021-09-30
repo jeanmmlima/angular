@@ -1,7 +1,22 @@
-<h4 class="text-name">{{usuario.nome}}</h4>
-<div class="divider"></div>
-<p class="text-description">
-  {{usuario.descricao}}
-</p>
-<a  class="waves-effect waves-light btn blue"
-  (click)="editarUsuario()">Editar</a>
+  <div class="row">
+    <div class="col l3 m4 s12">
+      <app-side-info></app-side-info>
+    </div>
+    <div class="col l9 m8 s12">
+      <h4 class="text-name">{{usuario.nome}}</h4>
+      <div class="divider"></div>
+      <p class="text-description">
+        {{usuario.descricao}}
+      </p>
+
+      <div class="col s12">
+        <router-outlet></router-outlet>
+      </div>
+
+      <a  class="waves-effect waves-light btn blue"
+      [routerLink]="[usuario.id+'/editar']">Editar</a>
+
+
+    </div>
+
+  </div>

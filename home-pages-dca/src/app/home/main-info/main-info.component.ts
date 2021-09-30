@@ -1,5 +1,6 @@
 import { HomeService } from './../home.service';
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-main-info',
@@ -12,7 +13,9 @@ export class MainInfoComponent implements OnInit {
   usuario: any;
 
   constructor(
-    private usuarioSerive: HomeService
+    //private route: ActivatedRoute,
+    private usuarioSerive: HomeService,
+    //private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -20,4 +23,8 @@ export class MainInfoComponent implements OnInit {
     this.usuario = this.usuarioSerive.getUsuario(1);
   }
 
+/*  renUsuario(){
+    this.router.navigate(['/home',this.usuario.id]);
+  }
+*/
 }

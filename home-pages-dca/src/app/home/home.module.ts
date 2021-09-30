@@ -1,3 +1,4 @@
+import { NavMenuComponent } from './../nav-menu/nav-menu.component';
 import { UsuarioDetalheResolver } from './guards/usuario-detalhe.resolver';
 import { HomeRoutingModule } from './home.routing.module';
 import { UsuarioFormComponent } from './usuario-form/usuario-form.component';
@@ -8,6 +9,8 @@ import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { UsuarioDetalheComponent } from './usuario-detalhe/usuario-detalhe.component';
+import { SideInfoComponent } from '../side-info/side-info.component';
+import { FooterInfoComponent } from '../footer-info/footer-info.component';
 
 
 
@@ -16,7 +19,10 @@ import { UsuarioDetalheComponent } from './usuario-detalhe/usuario-detalhe.compo
     HomeComponent,
     MainInfoComponent,
     UsuarioDetalheComponent,
-    UsuarioFormComponent
+    UsuarioFormComponent,
+    SideInfoComponent,
+    //NavMenuComponent,
+    //FooterInfoComponent
   ],
   imports: [
     CommonModule,

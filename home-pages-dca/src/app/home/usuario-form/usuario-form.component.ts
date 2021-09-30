@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Usuario } from './../usuario';
 import { Subscription } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
+import * as M from "materialize-css";
 
 @Component({
   selector: 'app-usuario-form',
@@ -23,6 +24,7 @@ export class UsuarioFormComponent implements OnInit {
 
   ngOnInit(): void {
 
+
     this.inscricao = this.route.params.subscribe(
       (params: any) => {
         let id = params['id'];
@@ -34,6 +36,13 @@ export class UsuarioFormComponent implements OnInit {
       }
     );
 
+  }
+  ngAfterViewInit(): void {
+    //Called after ngAfterContentInit when the component's view has been initialized. Applies to components only.
+    //Add 'implements AfterViewInit' to the class.
+
+    $('#descricao').val(this.usuario.descricao);
+    M.textareaAutoResize($('#descricao'));
   }
 
   ngOnDestroy(): void {
