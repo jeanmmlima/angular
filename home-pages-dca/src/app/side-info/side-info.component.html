@@ -4,7 +4,24 @@
         <a routerLink="/home" routerLinkActive="active"><img class="hoverable circle info-image" src="assets/img/jeanmmlima2.jpg"></a>
     </div>
     <div class="col s12 info-name grid-name">
+      <span class="center-align">{{usuario.nome}}</span>
+    </div>
+    <div class="col s12 grid-info">
+      <i class="inline-icon material-icons-outlined">email</i><a href="mailto:jean@dca.ufrn.br"><span class="email text-info"> {{usuario.email}}</span></a>
+    </div>
+    <div class="col s12 grid-info">
+      <i class="inline-icon material-icons-outlined">call</i><span class="text-info"> {{usuario.contato}}</span>
+    </div>
+    <div class="col s12 grid-info">
+      <i class="inline-icon material-icons-outlined">room</i><span class="text-info"> {{usuario.estacao_trabalho}}</span>
+    </div>
+    <div class="col s12 grid-info">
+      <i class="inline-icon material-icons-outlined">badge</i><a href="{{usuario.link_lattes}}" class="text-info" ><span> Currículo Lattes</span></a>
+    </div>
+    <!--
+    <div class="col s12 info-name grid-name">
       <span class="center-align">Jean Mário M. de Lima</span>
+      <span class="center-align">{{usuario.nome}}</span>
     </div>
     <div class="col s12 grid-info">
       <i class="inline-icon material-icons-outlined">email</i><a href="mailto:jean@dca.ufrn.br"><span class="email text-info"> jean@dca.ufrn.br</span></a>
@@ -18,6 +35,7 @@
     <div class="col s12 grid-info">
       <i class="inline-icon material-icons-outlined">badge</i><a href="http://lattes.cnpq.br/7467476735834560" class="text-info" ><span> Currículo Lattes</span></a>
     </div>
+    -->
     <!--
     <div class="col s12 grid-info">
       <i class="inline-icon material-icons-outlined">school</i><a href="#email"><span class="text-info"> Google Scholar</span></a>
