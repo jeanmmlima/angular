@@ -11,6 +11,7 @@ import { CommonModule } from '@angular/common';
 import { UsuarioDetalheComponent } from './usuario-detalhe/usuario-detalhe.component';
 import { SideInfoComponent } from '../side-info/side-info.component';
 import { FooterInfoComponent } from '../footer-info/footer-info.component';
+import { UsuarioInfosComponent } from './usuario-infos/usuario-infos.component';
 
 
 
@@ -21,6 +22,7 @@ import { FooterInfoComponent } from '../footer-info/footer-info.component';
     UsuarioDetalheComponent,
     UsuarioFormComponent,
     SideInfoComponent,
+    UsuarioInfosComponent,
     //NavMenuComponent,
     //FooterInfoComponent
   ],

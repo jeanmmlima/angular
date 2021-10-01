@@ -1,3 +1,4 @@
+import { UsuarioInfosComponent } from './usuario-infos/usuario-infos.component';
 import { UsuarioDetalheResolver } from './guards/usuario-detalhe.resolver';
 import { UsuarioFormComponent } from './usuario-form/usuario-form.component';
 import { UsuarioDetalheComponent } from './usuario-detalhe/usuario-detalhe.component';
@@ -19,8 +20,9 @@ const usuariosRoutes = [
   children:[
     { path: ':id/editar', component: UsuarioFormComponent }
   ]
-}
-//{ path: ':id/editar', component: UsuarioFormComponent }
+},
+{ path: ':id/editar', component: UsuarioInfosComponent,
+  resolve: { usuario: UsuarioDetalheResolver} }
 ];
 
 @NgModule({
