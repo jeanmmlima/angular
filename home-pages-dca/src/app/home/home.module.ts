@@ -1,3 +1,5 @@
+import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 import { NavMenuComponent } from './../nav-menu/nav-menu.component';
 import { UsuarioDetalheResolver } from './guards/usuario-detalhe.resolver';
 import { HomeRoutingModule } from './home.routing.module';
@@ -29,7 +31,8 @@ import { UsuarioInfosComponent } from './usuario-infos/usuario-infos.component';
   imports: [
     CommonModule,
     FormsModule,
-    HomeRoutingModule
+    HomeRoutingModule,
+    HttpClientModule
   ],
   exports:[
     //HomeComponent

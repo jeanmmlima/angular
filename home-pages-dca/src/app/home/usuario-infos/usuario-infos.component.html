@@ -1,1 +1,56 @@
-Nome do usuario: {{usuario.nome}}
+<h6>Informações do Usuário</h6>
+<br>
+  <div class="row">
+    <form #f="ngForm" (ngSubmit)="onSubmit(f)" class="col s12">
+      <div class="row">
+        <div class="input-field col s12">
+          <input name="nome" placeholder="{{usuario.nome}}"
+          [ngModel]="usuario.nome"
+          id="nome" type="text" class="validate"
+          required #nome="ngModel">
+          <label class="active" for="nome">Nome</label>
+          <span class="helper-text" data-error="Nome é um campo obrigatório" data-success=""></span>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="input-field col s6">
+          <input name="email" id="email" type="email"
+          [ngModel]="usuario.email"
+          class="validate" placeholder="usuario@dca.ufrn.br"
+          required #email="ngModel">
+          <label class="active" for="email">Email</label>
+          <span class="helper-text" data-error="Email com formato inválido" data-success=""></span>
+        </div>
+        <div class="input-field col s6">
+          <input name="contato" id="contato" type="text"
+          [ngModel]="usuario.contato"
+          class="validate" placeholder="(XX) XXXX-XXXX"
+          #contato="ngModel">
+          <label class="active" for="contato">Contato</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input name="estacao_trabalho" id="estacao_trabalho" type="text"
+          [ngModel]="usuario.estacao_trabalho"
+          class="validate" placeholder="CTEC 217"
+          #local_trabalho="ngModel">
+          <label class="active" for="estacao_trabalho">Local de Trabalho</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input name="link_lattes" id="link_lattes" type="text"
+          [ngModel]="usuario.link_lattes"
+          class="validate" #link_lattes="ngModel">
+          <label class="active" for="link_lattes">Link Currículo Lattes</label>
+        </div>
+      </div>
+      <button
+      class="btn blue"
+      [disabled]="!f.valid" type="submit">Editar
+        <i class="material-icons right">send</i>
+      </button>
+    </form>
+  </div>
