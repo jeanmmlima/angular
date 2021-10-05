@@ -7,9 +7,12 @@
           <input name="nome" placeholder="{{usuario.nome}}"
           [ngModel]="usuario.nome"
           id="nome" type="text" class="validate"
+          [class.is-invalid]="!nome.valid && nome.touched"
+          [class.is-valid]="nome.valid && nome.touched"
           required #nome="ngModel">
           <label class="active" for="nome">Nome</label>
-          <span class="helper-text" data-error="Nome é um campo obrigatório" data-success=""></span>
+          <span *ngIf="!nome.valid && nome.touched" class="helper-text"
+          data-error="Nome é um campo obrigatório!" data-success=""></span>
         </div>
       </div>
 
@@ -17,10 +20,17 @@
         <div class="input-field col s6">
           <input name="email" id="email" type="email"
           [ngModel]="usuario.email"
-          class="validate" placeholder="usuario@dca.ufrn.br"
-          required #email="ngModel">
+          placeholder="usuario@dca.ufrn.br"
+          required email #email="ngModel"
+          class="validate"
+          [class.is-invalid]="!email.valid && email.touched"
+          [class.is-valid]="email.valid && email.touched">
           <label class="active" for="email">Email</label>
-          <span class="helper-text" data-error="Email com formato inválido" data-success=""></span>
+
+          <span *ngIf="!email.valid && email.touched || email.dirty"
+          class="helper-text"
+          data-error="Email válido é obrigatório!" data-success="">
+          </span>
         </div>
         <div class="input-field col s6">
           <input name="contato" id="contato" type="text"

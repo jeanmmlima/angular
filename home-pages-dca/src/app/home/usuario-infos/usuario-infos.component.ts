@@ -50,10 +50,5 @@ export class UsuarioInfosComponent implements OnInit {
 
   }
 
-  onTest(form: any){
-    console.log("clicou");
-    console.log(form.value);
-  }
-
 
 }
