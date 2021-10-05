@@ -1,4 +1,4 @@
-<h6>Informações do Usuário</h6>
+<h5>Informações do Usuário</h5>
 <br>
   <div class="row">
     <form #f="ngForm" (ngSubmit)="onSubmit(f)" class="col s12">
@@ -58,9 +58,10 @@
         </div>
       </div>
       <button
-      class="btn blue"
+      class="btn blue darken-4" style="margin-right: 10px;"
       [disabled]="!f.valid" type="submit">Editar
         <i class="material-icons right">send</i>
       </button>
+      <button class="btn blue" type="reset">Cancelar <i class="material-icons right">cancel</i></button>
     </form>
   </div>
