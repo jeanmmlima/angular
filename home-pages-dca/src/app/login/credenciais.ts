@@ -1,8 +1,4 @@
 export class Credenciais{
-
-  constructor(
-    public nome: string,
-    public senha: string){
-
-  }
+  nome!: string;
+  senha!: string;
 }

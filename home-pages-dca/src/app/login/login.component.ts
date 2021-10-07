@@ -9,7 +9,7 @@ import { Credenciais } from './credenciais';
 })
 export class LoginComponent implements OnInit {
 
-  public credenciais!: Credenciais;
+  public credenciais: Credenciais = new Credenciais();
 
   constructor(private authService: AuthService) { }
 
