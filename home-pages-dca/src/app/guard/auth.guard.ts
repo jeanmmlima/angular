@@ -1,11 +1,15 @@
 import { Injectable } from '@angular/core';
-import { ActivatedRouteSnapshot, CanActivate, RouterStateSnapshot, UrlTree, CanActivateChild } from '@angular/router';
+import { ActivatedRouteSnapshot, CanActivate, RouterStateSnapshot, UrlTree, CanActivateChild, Router, CanLoad, Route, UrlSegment } from '@angular/router';
 import { Observable } from 'rxjs';
+import { AuthService } from '../login/auth.service';
 
 @Injectable()
-export class AuthGuard implements CanActivateChild {
+export class AuthGuard implements CanActivateChild, CanLoad {
 
-
+  constructor(
+    private authService: AuthService,
+    private router: Router
+  ) { }
 
   canActivateChild(
     route: ActivatedRouteSnapshot,
@@ -23,12 +27,26 @@ export class AuthGuard implements CanActivateChild {
     */
 
     console.log('AuthGuard: Guarda de rota filha!');
-    if(state.url.includes('editar')){
+    /*if(state.url.includes('editar')){
       //alert('Usuário sem acesso!')
       //return of(false);
-    }
+    }*/
 
-    return true;
+    return this.verificarAcesso();
+  }
+
+  private verificarAcesso(){
+    if(this.authService.usuarioEstaAutenticado()){
+      return true;
+    }
+    this.router.navigate(['/home'])
+    return false;
+  }
+
+  canLoad(route: Route): Observable<boolean> | Promise<boolean>| boolean{
+    console.log('AuthGuardCanLoad! Verificando se usuário pode carregar codigo do módulo');
+
+    return this.verificarAcesso();
   }
 
 }
