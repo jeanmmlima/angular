@@ -6,11 +6,13 @@ import { NgModule } from '@angular/core';
 import { EnsinoComponent } from './ensino/ensino.component';
 import { PesquisaComponent } from './pesquisa/pesquisa.component';
 import { ExtensaoComponent } from './extensao/extensao.component';
+import { AuthGuard } from './guard/auth.guard';
 //import { PageNotFoundComponent } from './';
 
 const appRoutes: Routes = [
   { path: 'home',
   loadChildren: () => import('./home/home.module').then(m => m.HomeModule),
+  //canActivateChild:[AuthGuard]
   },
   { path: 'ensino', component: EnsinoComponent },
   { path: 'pesquisa', component: PesquisaComponent },

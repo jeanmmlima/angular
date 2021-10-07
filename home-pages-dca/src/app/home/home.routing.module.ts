@@ -6,6 +6,7 @@ import { HomeComponent } from './home.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { MainInfoComponent } from './main-info/main-info.component';
+import { AuthGuard } from '../guard/auth.guard';
 
 const usuariosRoutes = [
   { path: '', component: MainInfoComponent,
@@ -17,6 +18,7 @@ const usuariosRoutes = [
   ]*/},
   { path: ':id', component: UsuarioDetalheComponent,
   resolve: { usuario: UsuarioDetalheResolver},
+  canActivateChild: [AuthGuard],
   children:[
     { path: ':id/editar', component: UsuarioFormComponent }
   ]

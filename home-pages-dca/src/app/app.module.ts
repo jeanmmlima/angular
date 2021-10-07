@@ -13,6 +13,8 @@ import { PaginaNaoEncontradaComponent } from './pagina-nao-encontrada/pagina-nao
 import { FooterInfoComponent } from './footer-info/footer-info.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { SideInfoComponent } from './side-info/side-info.component';
+import { LoginComponent } from './login/login.component';
+import { AuthGuard } from './guard/auth.guard';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,8 @@ import { SideInfoComponent } from './side-info/side-info.component';
     EnsinoComponent,
     PesquisaComponent,
     ExtensaoComponent,
-    PaginaNaoEncontradaComponent
+    PaginaNaoEncontradaComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +36,7 @@ import { SideInfoComponent } from './side-info/side-info.component';
   //  HomeModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
