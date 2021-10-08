@@ -1,3 +1,4 @@
+import { AuthService } from './../../login/auth.service';
 import { HomeService } from './../home.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
@@ -17,7 +18,8 @@ export class UsuarioDetalheComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private usuarioService: HomeService,
-    private router: Router
+    private router: Router,
+    private authService: AuthService
 
   ) { }
 
@@ -38,6 +40,10 @@ export class UsuarioDetalheComponent implements OnInit {
 
   editarUsuario(){
     this.router.navigate(['/home',this.usuario.id,'editar']);
+  }
+
+  estadoAutenticacao(){
+    return this.authService.usuarioEstaAutenticado();
   }
 
 }

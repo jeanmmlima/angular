@@ -14,7 +14,8 @@
       </div>
 
       <a  class="waves-effect waves-light btn blue"
-      [routerLink]="[usuario.id+'/editar']">Editar</a>
+      [routerLink]="[usuario.id+'/editar']"
+       *ngIf="estadoAutenticacao()">Editar</a>
 
 
     </div>

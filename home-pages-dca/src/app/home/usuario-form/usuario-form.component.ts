@@ -1,3 +1,4 @@
+import { AuthService } from './../../login/auth.service';
 import { HomeService } from './../home.service';
 import { ActivatedRoute } from '@angular/router';
 import { Usuario } from './../usuario';
@@ -18,7 +19,8 @@ export class UsuarioFormComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private usuarioService: HomeService
+    private usuarioService: HomeService,
+    private authService: AuthService
 
   ) { }
 
@@ -54,6 +56,10 @@ export class UsuarioFormComponent implements OnInit {
   onInput(){
     this.formMudou = true;
     console.log("mudou!");
+  }
+
+  estadoAutenticacao(){
+    return this.authService.usuarioEstaAutenticado();
   }
 
 }
