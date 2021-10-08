@@ -1,5 +1,4 @@
-<h5>Informações do Usuário</h5>
-<br>
+
   <div class="row">
     <form #f="ngForm" (ngSubmit)="onSubmit(f)" class="col s12">
       <div class="row">
@@ -57,11 +56,25 @@
           <label class="active" for="link_lattes">Link Currículo Lattes</label>
         </div>
       </div>
+
+      <div class="row">
+        <div class="input-field col s12">
+          <textarea id="descricao" name="descricao"
+          [ngModel]="usuario.descricao"
+          class="validate" #descricao="ngModel"
+           class="materialize-textarea"></textarea>
+          <label for="descricao" class="active">Descrição</label>
+        </div>
+      </div>
+
       <button
       class="btn blue darken-4" style="margin-right: 10px;"
       [disabled]="!f.valid" type="submit">Editar
         <i class="material-icons right">send</i>
       </button>
-      <button class="btn blue" type="reset">Cancelar <i class="material-icons right">cancel</i></button>
+      <a  class="btn blue"
+      (click)="onCancel()"
+       >Cancelar <i class="material-icons right">cancel</i></a>
+
     </form>
   </div>

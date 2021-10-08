@@ -6,6 +6,8 @@ import { HomeService } from '../home.service';
 import { HttpClient } from '@angular/common/http';
 import { HttpHeaders } from '@angular/common/http';
 import { map } from 'rxjs/operators'
+import * as M from "materialize-css";
+
 
 @Component({
   selector: 'app-usuario-infos',
@@ -32,6 +34,14 @@ export class UsuarioInfosComponent implements OnInit {
     )
   }
 
+  ngAfterViewInit(): void {
+    //Called after ngAfterContentInit when the component's view has been initialized. Applies to components only.
+    //Add 'implements AfterViewInit' to the class.
+
+    $('#descricao').val(this.usuario.descricao);
+    M.textareaAutoResize($('#descricao'));
+  }
+
   ngOnDestroy(): void {
     //Called once, before the instance is destroyed.
     //Add 'implements OnDestroy' to the class.
@@ -48,6 +58,10 @@ export class UsuarioInfosComponent implements OnInit {
     .pipe(map(res => res))
     .subscribe(dados => console.log(dados));
 
+  }
+
+  onCancel(){
+    this.router.navigate(['/home',this.usuario.id]);
   }
 
 

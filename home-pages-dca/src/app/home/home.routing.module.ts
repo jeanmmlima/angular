@@ -18,13 +18,16 @@ const usuariosRoutes = [
   ]*/},
   { path: ':id', component: UsuarioDetalheComponent,
   resolve: { usuario: UsuarioDetalheResolver},
-  canActivateChild: [AuthGuard],
+  //canActivateChild: [AuthGuard],
   children:[
-    { path: ':id/editar', component: UsuarioFormComponent }
+    { path: ':id/editar', component: UsuarioInfosComponent,
+    resolve: { usuario: UsuarioDetalheResolver}},
+    { path: ':id/editarHome', component: UsuarioFormComponent }
   ]
 },
-{ path: ':id/editar', component: UsuarioInfosComponent,
+/*{ path: ':id/editar', component: UsuarioInfosComponent,
   resolve: { usuario: UsuarioDetalheResolver} }
+  */
 ];
 
 @NgModule({
