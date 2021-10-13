@@ -56,10 +56,10 @@ export class HomeService {
       let usuario = this.usuarios[i];
       if(usuario.email === usr.nome &&
         usuario.senha === usr.senha){
-        return true;
+        return usuario;
       }
     }
-    return false;
+    return null;
   }
 
   constructor() { }

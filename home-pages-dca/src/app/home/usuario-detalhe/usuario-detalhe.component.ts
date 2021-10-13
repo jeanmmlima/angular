@@ -46,4 +46,8 @@ export class UsuarioDetalheComponent implements OnInit {
     return this.authService.usuarioEstaAutenticado();
   }
 
+  checkCurrentUser(id: any){
+    return this.authService.usuarioEstaAutenticado() && (id === this.authService.getUsuarioLogado);
+  }
+
 }
