@@ -42,7 +42,7 @@ export class AuthService {
       this.usuarioAutenticado = true;
       this.autenticarUsuarioEmitter.emit(true);
       //home page
-      this.router.navigate(['/home'])
+      this.router.navigate(['/home/'+this.id]);
     } else {
       this.usuarioAutenticado = false;
       this.autenticarUsuarioEmitter.emit(false);
