@@ -56,7 +56,7 @@ export class HomeService {
       let usuario = this.usuarios[i];
       if(usuario.email === usr.nome &&
         usuario.senha === usr.senha){
-        return usuario;
+        return usuario.id;
       }
     }
     return null;

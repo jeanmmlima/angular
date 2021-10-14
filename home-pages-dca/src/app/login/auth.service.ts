@@ -12,7 +12,7 @@ export class AuthService {
   private usuarioAutenticado: boolean = false;
 
 
-  private user: any;
+  private id: any;
   autenticarUsuarioEmitter = new EventEmitter<boolean>();
 
   constructor(
@@ -37,9 +37,8 @@ export class AuthService {
   }*/
 
   fazerLogin(usr: Credenciais){
-    this.user = this.homeService.authUsuario(usr);
-    if(this.user){
-      console.log(this.user);
+    this.id = this.homeService.authUsuario(usr);
+    if(this.id != null){
       this.usuarioAutenticado = true;
       this.autenticarUsuarioEmitter.emit(true);
       //home page
@@ -56,7 +55,7 @@ export class AuthService {
   }
 
   getUsuarioLogado(){
-    return this.user;
+    return this.id;
   }
 
 }

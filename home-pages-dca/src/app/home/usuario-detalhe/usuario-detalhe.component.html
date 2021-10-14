@@ -13,17 +13,22 @@
         <router-outlet></router-outlet>
       </div>
 
-      <a  class="waves-effect waves-light btn blue"
+      <!--
+
+        <a  class="waves-effect waves-light btn blue"
       [routerLink]="[usuario.id+'/editar']"
        *ngIf="estadoAutenticacao()">Editar</a>
+
+       <a  class="waves-effect waves-light btn blue"
+      [routerLink]="[usuario.id+'/editar']"
+       >Editar</a>
+      -->
 
        <a  class="waves-effect waves-light btn red"
       [routerLink]="[usuario.id+'/editar']"
        *ngIf="checkCurrentUser(usuario.id)">Editar</a>
 
-       <a  class="waves-effect waves-light btn blue"
-      [routerLink]="[usuario.id+'/editar']"
-       >Editar</a>
+
 
 
     </div>

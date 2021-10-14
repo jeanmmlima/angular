@@ -6,9 +6,10 @@ import { AuthService } from '../login/auth.service';
 @Injectable()
 export class AuthGuard implements CanActivateChild, CanLoad {
 
+  public id: any;
   constructor(
     private authService: AuthService,
-    private router: Router
+    private router: Router,
   ) { }
 
   canActivateChild(
@@ -27,16 +28,27 @@ export class AuthGuard implements CanActivateChild, CanLoad {
     */
 
     console.log('AuthGuard: Guarda de rota filha!');
+    this.id = route.params.id;
+    console.log(route.params.id);
     /*if(state.url.includes('editar')){
       //alert('Usuário sem acesso!')
       //return of(false);
     }*/
 
-    return this.verificarAcesso();
+    //return this.verificarAcesso();
+    return this.verificarAcessoEUsuario();
   }
 
   private verificarAcesso(){
     if(this.authService.usuarioEstaAutenticado()){
+      return true;
+    }
+    this.router.navigate(['/home'])
+    return false;
+  }
+
+  private verificarAcessoEUsuario(){
+    if(this.authService.usuarioEstaAutenticado() && this.id == this.authService.getUsuarioLogado()){
       return true;
     }
     this.router.navigate(['/home'])
